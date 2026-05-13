@@ -30,7 +30,7 @@ Kopi,Kopi Hitam,10000,40
 Kopi,Kopi Susu,12000,45
 Kopi,Kopi Gula Aren,15000,50
 Kopi,Cappuccino,18000,30
-Kopi,Kopi Karamel,20000,25
+Kopi,Kopi Karamel,20000,23
 Non-Kopi,Es Teh Manis,5000,50
 Non-Kopi,Es Jeruk,8000,45
 Non-Kopi,Teh Tarik,12000,35

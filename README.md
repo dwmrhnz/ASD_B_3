@@ -21,7 +21,6 @@ Aplikasi ini menerapkan dua struktur data utama untuk menyimulasikan operasional
 - **Pencarian & Pengurutan:** Dilengkapi fitur *partial search* untuk mencari hidangan dan *Bubble Sort* untuk mengurutkan harga menu.
 - **Mode Admin Tersembunyi (CRUD):** Admin dapat melakukan *Create, Update, dan Delete* data menu makanan & stok.
 - **Penyimpanan Permanen:** Perubahan stok dan menu otomatis tersimpan di file `data/menu.txt`.
-- **Cetak Struk Dinamis (PDF):** Menghasilkan bukti transaksi berformat `.pdf` secara otomatis menyesuaikan jumlah pesanan pelanggan menggunakan `reportlab`.
 
 ## 🛠️ Prasyarat & Instalasi
 Sebelum menjalankan aplikasi ini, pastikan komputer Anda sudah terpasang Python 3 dan beberapa pustaka pihak ketiga.
