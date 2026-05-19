@@ -50,7 +50,6 @@ Kelompok3/
 ├── modules/
 │   ├── linkedlist_menu.py       # Logika struktur data Linked List
 │   └── queue_antrean.py         # Logika struktur data Queue & Transaksi
-├── struk/                       # Folder auto-generated untuk file PDF struk
 ├── .gitignore                   # Konfigurasi pengabaian file Git
 ├── main.py                      # File eksekusi utama aplikasi
 └── README.md                    # Dokumentasi proyek
