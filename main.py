@@ -5,7 +5,7 @@ from rich.align import Align
 from modules.linkedlist_menu import LinkedListMenu
 from modules.queue_antrean import QueuePesanan
 
-console = Console()
+console = Console(highlight=False)
 
 def bersihkan_layar():
     """ Fungsi helper buat clear screen terminal. """
@@ -89,10 +89,17 @@ def main():
             nama = input("Masukkan Nama Anda: ").strip()
             if nama:
                 console.print("Pilih Tipe: [1] Dine-in  [2] Takeaway")
-                tipe_input = input("Pilihan (1/2): ").strip()
-                # set default string pake ternary operator
-                tipe = "Takeaway" if tipe_input == '2' else "Dine-in"
-                antrean_kasir.ambil_antrean(nama, tipe) # hit function enqueue
+                while True:
+                    tipe_input = input("Pilihan (1/2): ").strip()
+                    if tipe_input == '1':
+                        tipe = "Dine-in"
+                        break
+                    elif tipe_input == '2':
+                        tipe = "Takeaway"
+                        break
+                    else:
+                        console.print("[bold red]Input tidak valid! Harap masukkan angka 1 atau 2.[/bold red]")
+                antrean_kasir.ambil_antrean(nama, tipe)
             input("\nTekan Enter kembali...")
 
         elif pilihan == '3':

@@ -121,7 +121,11 @@ class QueuePesanan:
                 console.print(f"- {item['menu']} (x{item['jumlah']}) : [yellow]{subtotal_format}[/yellow]")
             console.print(f"[bold yellow]TOTAL BAYAR: {total_format}[/bold yellow]")
             
-            yakin = input("\nApakah pesanan sudah benar? (y/n): ").strip().lower()
+            while True:
+                yakin = input("\nApakah pesanan sudah benar? (y/n): ").strip().lower()
+                if yakin == 'y' or yakin == 'n':
+                    break
+                console.print("[bold red]Input tidak valid! Harap ketik 'y' atau 'n'.[/bold red]")
             if yakin == 'y':
                 # potong stok real di Linked List
                 for item in keranjang:
