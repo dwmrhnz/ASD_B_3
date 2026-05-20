@@ -76,17 +76,20 @@ class QueuePesanan:
                 if hasil_pencarian is None:
                     console.print(f"[bold red][GAGAL] Maaf, menu '{pesanan}' tidak ditemukan. Cek ejaanmu![/bold red]")
                     continue
+                
+                # FIX 1: Gunakan nama baku dari database sebagai key, bukan input mentah user
+                nama_menu_asli = hasil_pencarian.nama
                     
                 # cek stok sementara, kalo kosong ambil dari master data (database node)
-                stok_saat_ini = stok_sementara.get(pesanan, hasil_pencarian.stok)
+                stok_saat_ini = stok_sementara.get(nama_menu_asli, hasil_pencarian.stok)
                 harga_menu = hasil_pencarian.harga
                 
                 if stok_saat_ini <= 0:
-                    console.print(f"[bold red][GAGAL] Maaf, stok untuk '{pesanan}' sedang habis.[/bold red]")
+                    console.print(f"[bold red][GAGAL] Maaf, stok untuk '{nama_menu_asli}' sedang habis.[/bold red]")
                     continue
                     
                 try:
-                    jumlah_pesan = int(input(f"Berapa porsi {pesanan}? (Tersedia: {stok_saat_ini}): "))
+                    jumlah_pesan = int(input(f"Berapa porsi {nama_menu_asli}? (Tersedia: {stok_saat_ini}): "))
                 except ValueError:
                     console.print("[bold red][ERROR] Masukkan harus angka![/bold red]")
                     continue
@@ -95,18 +98,29 @@ class QueuePesanan:
                     console.print(f"[bold red][GAGAL] Jumlah tidak valid atau melebihi stok.[/bold red]")
                     continue
                     
-                # update keranjang & stok sementara
-                stok_sementara[pesanan] = stok_saat_ini - jumlah_pesan
+                # update stok sementara menggunakan nama asli
+                stok_sementara[nama_menu_asli] = stok_saat_ini - jumlah_pesan
                 subtotal = harga_menu * jumlah_pesan
                 total_belanja += subtotal
                 
-                keranjang.append({
-                    "menu": hasil_pencarian.nama,
-                    "jumlah": jumlah_pesan,
-                    "harga_satuan": harga_menu,
-                    "subtotal": subtotal
-                })
-                console.print(f"[bold green] + Berhasil menambah {jumlah_pesan}x {hasil_pencarian.nama}[/bold green]\n")
+                # FIX 2: Cek apakah menu sudah ada di keranjang. Jika ada, gabungkan angkanya.
+                item_sudah_ada = False
+                for item in keranjang:
+                    if item['menu'] == nama_menu_asli:
+                        item['jumlah'] += jumlah_pesan
+                        item['subtotal'] += subtotal
+                        item_sudah_ada = True
+                        break
+                
+                # Jika belum ada di keranjang, buat baris baru
+                if not item_sudah_ada:
+                    keranjang.append({
+                        "menu": nama_menu_asli,
+                        "jumlah": jumlah_pesan,
+                        "harga_satuan": harga_menu,
+                        "subtotal": subtotal
+                    })
+                console.print(f"[bold green] + Berhasil menambah {jumlah_pesan}x {nama_menu_asli}[/bold green]\n")
 
             # --- FASE KONFIRMASI ---
             if not keranjang:
