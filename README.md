@@ -33,7 +33,7 @@ Sebelum menjalankan aplikasi ini, pastikan komputer Anda sudah terpasang Python 
 
 2. Instal pustaka yang dibutuhkan:
    ```bash
-   pip install rich reportlab
+   pip install rich
    ```
 
 3. Jalankan aplikasi:
