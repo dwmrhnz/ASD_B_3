@@ -44,7 +44,7 @@ class LinkedListMenu:
                     if not line:
                         continue # skip baris kosong
                     
-                    # split string dari format CSV
+                    # split string dari format txt
                     parts = line.split(',')
                     if len(parts) == 4:
                         jenis, nama, harga, stok = parts
