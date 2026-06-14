@@ -5,6 +5,18 @@
 
 Proyek ini adalah aplikasi Sistem Kasir Restoran berbasis *Command Line Interface* (CLI) yang dibangun menggunakan bahasa pemrograman Python. Proyek ini disusun untuk memenuhi Tugas Proyek Akhir mata kuliah **Algoritma & Struktur Data (TPL2106)** pada program studi D4 Teknologi Rekayasa Perangkat Lunak, Sekolah Vokasi IPB University.
 
+## ▶️ Video Penjelasan Kode
+<div align="center">
+  <br>
+  <a href="https://youtu.be/9B-NKai8KUI">
+    <img src="https://img.youtube.com/vi/9B-NKai8KUI/maxresdefault.jpg" alt="Video Penjelasan Sariawam Resto" width="85%">
+  </a>
+  <p><i>Klik gambar di atas untuk menonton video penjelasan kode di YouTube</i></p>
+  <br>
+</div>
+
+---
+
 ## 👥 Tim Pengembang (Kelompok 3)
 - **Fardhan** (Fokus: Data Menu & Linked List)
 - **Hirzi** (Fokus: Antrean Queue & File Handling)
