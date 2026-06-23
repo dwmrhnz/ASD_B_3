@@ -15,12 +15,15 @@ Proyek ini adalah aplikasi Sistem Kasir Restoran berbasis *Command Line Interfac
   <br>
 </div>
 
+## 📄 Laporan Akhir PBL
+https://drive.google.com/file/d/1qkOYGQRRAgJvybFMao8JIBy6yGLvZA1c/view?usp=drive_link
+
 ---
 
 ## 👥 Tim Pengembang (Kelompok 3)
-- **Fardhan** (Fokus: Data Menu & Linked List)
-- **Hirzi** (Fokus: Antrean Queue & File Handling)
-- **Dawam Raihan Zufar** (Fokus: Project Manager, CLI UI/UX & Admin Mode)
+- **Fardhan Al Biansya (J0403251060)** (Fokus: Data Menu & Linked List)
+- **Hirzi Haidi Haqqi (J0403251073)** (Fokus: Antrean Queue & File Handling)
+- **Dawam Raihan Zufar (J0403251099)** (Fokus: Project Manager, CLI UI/UX & Admin Mode)
 
 ## 💡 Konsep & Struktur Data
 Aplikasi ini menerapkan dua struktur data utama untuk menyimulasikan operasional restoran yang nyata:
